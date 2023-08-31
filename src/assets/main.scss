@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  .projects-grid {
+    div:nth-child(1) {
+      grid-column: 1 / span 5;
+    }
+
+    div:nth-child(2) {
+      grid-column: 6 / span 7;
+    }
+
+    div:nth-child(3) {
+      grid-column: 1 / span 7;
+    }
+
+    div:nth-child(4) {
+      grid-column: 8 / span 5;
+    }
+
+    div:nth-child(5) {
+      grid-column: 1 / span 5;
+    }
+
+    div:nth-child(6) {
+      grid-column: 6 / span 7;
+    }
+  }
+}
