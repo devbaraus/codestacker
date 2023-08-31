@@ -14,7 +14,7 @@
             alt="Logo Code Tower"
             title="Code Tower"
           />
-          <p class="ml-2 inline align-middle text-3xl font-extrabold uppercase">Code Tower</p>
+          <p class="ml-2 inline align-middle text-3xl font-extrabold uppercase">{{ siteName }}</p>
         </a>
         <p class="my-4 font-light">
           {{ siteDescription }}
