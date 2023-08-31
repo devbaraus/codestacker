@@ -41,7 +41,7 @@ const links = [
 
 <template>
   <div
-    class="bg-blur container fixed left-1/2 top-2 z-10 flex h-16 -translate-x-1/2 items-center justify-around bg-white/80 shadow backdrop-blur-sm backdrop-filter lg:rounded"
+    class="container fixed left-1/2 top-2 z-10 flex h-16 -translate-x-1/2 items-center justify-around bg-white/80 shadow backdrop-blur-sm backdrop-filter lg:rounded"
   >
     <div
       :class="
