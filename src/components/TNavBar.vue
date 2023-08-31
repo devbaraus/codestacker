@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { PhList } from '@phosphor-icons/vue'
 import TButton from '@/components/ui/TButton.vue'
 import { cn } from '@/utils'
+import { siteName } from '@/site.config'
 
 const mobnav = ref<boolean>(false)
 
@@ -80,11 +81,11 @@ const links = [
         <img
           src="@/assets/logo.svg"
           class="inline h-10 align-middle"
-          alt="Logo Code Tower"
-          title="Code Tower"
+          :alt="siteName"
+          :title="siteName"
         />
         <p class="ml-2 inline align-middle text-lg font-extrabold uppercase lg:text-2xl">
-          Code Tower
+          {{ siteName }}
         </p>
       </a>
       <button class="lg:hidden">
