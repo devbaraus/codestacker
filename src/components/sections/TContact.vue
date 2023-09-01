@@ -12,7 +12,7 @@
       <!--      </div>-->
       <div
         class="w-full"
-        data-aos="fade-left"
+        data-aos="fade-in"
       >
         <div class="space-y-4">
           <div class="space-y-2">
@@ -38,7 +38,7 @@
       </div>
       <form
         @submit.prevent="submitForm"
-        data-aos="fade-right"
+        data-aos="fade-in"
         class="space-y-4"
       >
         <div class="flex w-full flex-row flex-wrap gap-6 lg:flex-nowrap">
