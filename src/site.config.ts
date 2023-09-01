@@ -3,7 +3,7 @@ import type { Member, Project, Social } from '@/types'
 export const siteName = 'Code Stacker'
 export const siteTitle = `${siteName} - Empresa Júnior do IFG Câmpus Anápolis`
 
-export const siteURL = 'https://codetower.netlify.app'
+export const siteURL = 'https://codestacker.baraus.dev'
 
 export const siteCNPJ = '00.000.000/0001-00'
 export const siteDescription = `A ${siteName} é uma empresa sem fins lucrativos, visando fomentar o empreendedorismo no Brasil através de projetos de tecnologia da informação de alta qualidade e custo abaixo do mercado. Todo o valor ganho é revertido para a formação profissional dos nossos membros e alunos do Instituto Federal de Goiás - Câmpus Anápolis.`
