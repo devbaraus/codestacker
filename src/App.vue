@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import TNavBar from '@/components/TNavBar.vue'
-import THeaderHero from '@/components/sections/THeaderHero.vue'
-import TServices from '@/components/sections/TServices.vue'
 import TAbout from '@/components/sections/TAbout.vue'
 import TContact from '@/components/sections/TContact.vue'
 import TFooter from '@/components/sections/TFooter.vue'
-import TPortfolio from '@/components/sections/TPortfolio.vue'
+import THeaderHero from '@/components/sections/THeaderHero.vue'
 import TMembers from '@/components/sections/TMembers.vue'
-import { onMounted } from 'vue'
+import TPortfolio from '@/components/sections/TPortfolio.vue'
+import TServices from '@/components/sections/TServices.vue'
+import TNavBar from '@/components/TNavBar.vue'
 import AOS from 'aos'
+import { onMounted } from 'vue'
+
 onMounted(() => {
   AOS.init({
     once: true

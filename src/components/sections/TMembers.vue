@@ -16,9 +16,8 @@
 </template>
 
 <script setup lang="ts">
-import { siteMembers } from '@/site.config'
 import TMemberCard from '@/components/ui/TMemberCard.vue'
+import { siteMembers } from '@/site.config'
+
 const time = [1.8, 1.4, 1, 1.4, 1.8]
 </script>
-
-<style scoped></style>

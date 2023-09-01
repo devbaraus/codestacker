@@ -6,5 +6,8 @@
   "printWidth": 100,
   "singleAttributePerLine": true,
   "trailingComma": "none",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@ianvs/prettier-plugin-sort-imports"
+  ]
 }

@@ -50,12 +50,10 @@
 
 <script setup lang="ts">
 import type { Member } from '@/types'
-import { PhInstagramLogo, PhTwitterLogo, PhLinkedinLogo } from '@phosphor-icons/vue'
 import { cn } from '@/utils'
+import { PhInstagramLogo, PhLinkedinLogo, PhTwitterLogo } from '@phosphor-icons/vue'
 
 defineProps<{
   member: Member
 }>()
 </script>
-
-<style scoped></style>

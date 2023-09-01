@@ -26,8 +26,8 @@
 
 <script setup lang="ts">
 import TServiceCard from '@/components/ui/TServiceCard.vue'
-import { PhLayout, PhDeviceMobile, PhUsb } from '@phosphor-icons/vue'
 import { cn } from '@/utils'
+import { PhDeviceMobile, PhLayout, PhUsb } from '@phosphor-icons/vue'
 
 const services = [
   {

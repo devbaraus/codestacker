@@ -9,7 +9,7 @@
       id="flash-message"
       :class="`${
         show ? 'flash-active' : ''
-      } ease-in-300  fixed flex h-80 w-64 flex-col items-center justify-center rounded bg-white px-4 py-8 text-dark`"
+      } ease-in-300  fixed flex h-80 w-64 flex-col items-center justify-center rounded-lg bg-white px-4 py-8 text-dark`"
     >
       <i
         :class="`${

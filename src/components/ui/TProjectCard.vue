@@ -1,5 +1,5 @@
 <template>
-  <div class="group relative flex h-full flex-1 flex-col overflow-hidden">
+  <div class="group relative flex h-full flex-1 flex-col overflow-hidden rounded-lg">
     <img
       class="ease-in-300 h-72 object-cover transition-all group-hover:scale-105"
       :src="project.cover.href"
@@ -27,10 +27,10 @@
 
 <script setup lang="ts">
 import type { Project } from '@/types'
-import { computed } from 'vue'
+import { cn } from '@/utils'
 import { format } from 'date-fns'
 import portugueseLocale from 'date-fns/locale/pt-BR'
-import { cn } from '@/utils'
+import { computed } from 'vue'
 
 const props = defineProps<{
   project: Project

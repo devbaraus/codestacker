@@ -74,5 +74,3 @@
 <script setup lang="ts">
 import { siteCNPJ, siteContatos, siteDescription, siteLinksUteis, siteName } from '@/site.config'
 </script>
-
-<style scoped></style>

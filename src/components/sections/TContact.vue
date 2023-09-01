@@ -100,8 +100,8 @@
           <TButton
             type="submit"
             class="px-6 uppercase lg:px-3"
-            >enviar</TButton
-          >
+            >enviar
+          </TButton>
         </div>
       </form>
     </div>
@@ -109,8 +109,8 @@
 </template>
 
 <script setup lang="ts">
-import TField from '@/components/ui/TField.vue'
 import TButton from '@/components/ui/TButton.vue'
+import TField from '@/components/ui/TField.vue'
 import { ref } from 'vue'
 
 const cname = ref('')
@@ -145,30 +145,4 @@ function validateMessage() {
   let reg = new RegExp('(\\w.+\\s).+', 'i')
   return reg.test(cmsg.value) && !!cmsg.value
 }
-
-function submitForm(e: Event) {
-  const data = (e.target as HTMLFormElement).serialize()
-
-  console.log(data)
-
-  // this.$axios
-  //   .post('https://formspree.io/f/mknpbyad', data)
-  //   .then(() => {
-  //     this.$store.commit('flashMessage', {
-  //       status: true,
-  //       title: 'Sucesso',
-  //       description: 'Mensagem enviada! Entraremos em contato assim que possível.'
-  //     })
-  //     form.reset()
-  //   })
-  //   .catch(() => {
-  //     this.$store.commit('flashMessage', {
-  //       status: false,
-  //       title: 'Oops',
-  //       description: 'Não foi possível encaminhar os dados. Tente novamente!'
-  //     })
-  //   })
-}
 </script>
-
-<style scoped></style>

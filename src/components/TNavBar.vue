@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { PhList, PhX } from '@phosphor-icons/vue'
 import TButton from '@/components/ui/TButton.vue'
-import { cn } from '@/utils'
 import { siteName } from '@/site.config'
+import { cn } from '@/utils'
+import { PhList, PhX } from '@phosphor-icons/vue'
+import { ref } from 'vue'
 
 const mobnav = ref<boolean>(false)
 
@@ -86,7 +86,7 @@ const links = [
   </div>
 
   <div
-    class="container fixed left-1/2 top-0 z-10 flex h-16 -translate-x-1/2 items-center justify-around bg-white/80 shadow backdrop-blur-sm backdrop-filter lg:top-2 lg:rounded"
+    class="container fixed left-1/2 top-0 z-10 flex h-16 -translate-x-1/2 items-center justify-around bg-white/80 shadow backdrop-blur-sm backdrop-filter lg:top-2 lg:rounded-lg"
   >
     <nav class="container z-20 flex items-center justify-between py-4 text-dark">
       <a href="/">

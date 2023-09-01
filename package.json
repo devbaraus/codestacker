@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@phosphor-icons/vue": "^2.1.6",
     "aos": "^2.3.4",
     "date-fns": "^2.30.0",
