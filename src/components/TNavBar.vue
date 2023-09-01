@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { PhList } from '@phosphor-icons/vue'
+import { PhList, PhX } from '@phosphor-icons/vue'
 import TButton from '@/components/ui/TButton.vue'
 import { cn } from '@/utils'
 import { siteName } from '@/site.config'
@@ -42,17 +42,25 @@ const links = [
 
 <template>
   <div
-    class="container fixed left-1/2 top-2 z-10 flex h-16 -translate-x-1/2 items-center justify-around bg-white/80 shadow backdrop-blur-sm backdrop-filter lg:rounded"
+    :class="
+      cn(
+        `left-0 top-0 z-30 flex h-screen w-full rounded-b-lg bg-transparent backdrop-blur-sm backdrop-filter lg:hidden`,
+        mobnav ? 'fixed' : 'hidden'
+      )
+    "
+    @click="toggleNav"
   >
     <div
-      :class="
-        cn(
-          `left-0 top-0 z-30 flex h-screen w-full rounded-b-lg bg-white pb-8 lg:hidden`,
-          mobnav ? 'fixed' : 'hidden'
-        )
-      "
+      class="ml-auto flex flex-col items-end gap-4 bg-white p-8 py-6 text-xl"
+      @click.stop=""
     >
-      <ul class="ml-auto mr-2 flex flex-col items-end gap-4 text-xl">
+      <button
+        class="lg:hidden"
+        @click="toggleNav"
+      >
+        <PhX class="text-xl" />
+      </button>
+      <ul class="flex flex-col items-end gap-4">
         <li
           :key="link.url"
           v-for="link in links"
@@ -75,7 +83,11 @@ const links = [
         </li>
       </ul>
     </div>
+  </div>
 
+  <div
+    class="container fixed left-1/2 top-0 z-10 flex h-16 -translate-x-1/2 items-center justify-around bg-white/80 shadow backdrop-blur-sm backdrop-filter lg:top-2 lg:rounded"
+  >
     <nav class="container z-20 flex items-center justify-between py-4 text-dark">
       <a href="/">
         <img
@@ -84,16 +96,15 @@ const links = [
           :alt="siteName"
           :title="siteName"
         />
-        <p class="ml-2 inline align-middle text-lg font-extrabold uppercase lg:text-2xl">
+        <p class="ml-2 inline align-middle text-2xl font-extrabold uppercase">
           {{ siteName }}
         </p>
       </a>
-      <button class="lg:hidden">
-        <PhList
-          :active="mobnav"
-          @click="toggleNav"
-          class="text-xl"
-        />
+      <button
+        @click="toggleNav"
+        class="lg:hidden"
+      >
+        <PhList class="text-xl" />
       </button>
 
       <ul class="hidden items-center gap-4 lg:inline-flex">

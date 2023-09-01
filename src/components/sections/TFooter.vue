@@ -11,8 +11,8 @@
           <img
             src="@/assets/logo.svg"
             class="inline h-16 align-middle"
-            alt="Logo Code Tower"
-            title="Code Tower"
+            :alt="`Logo ${siteName}`"
+            :title="siteName"
           />
           <p class="ml-2 inline align-middle text-3xl font-extrabold uppercase">{{ siteName }}</p>
         </a>

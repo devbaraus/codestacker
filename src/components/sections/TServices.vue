@@ -10,7 +10,7 @@
         :text="service.text"
         :icon="service.icon"
         :data-wow-duration="`${index * 0.3 + 1}s`"
-        class="wow animate__animated animate__fadeInUp"
+        data-aos="fade-up"
         :icon-class="
           cn(
             service.color === 'dark' && 'bg-dark',

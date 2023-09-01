@@ -6,6 +6,14 @@ import TAbout from '@/components/sections/TAbout.vue'
 import TContact from '@/components/sections/TContact.vue'
 import TFooter from '@/components/sections/TFooter.vue'
 import TPortfolio from '@/components/sections/TPortfolio.vue'
+import TMembers from '@/components/sections/TMembers.vue'
+import { onMounted } from 'vue'
+import AOS from 'aos'
+onMounted(() => {
+  AOS.init({
+    once: true
+  })
+})
 </script>
 
 <template>
@@ -28,7 +36,7 @@ import TPortfolio from '@/components/sections/TPortfolio.vue'
       id="sobre"
       class="-my-4 py-20"
     />
-    <!--          <TMembers class='py-12' :members='members' />-->
+    <TMembers class="-my-4 py-20" />
     <TContact
       id="contato"
       class="-my-4 py-20"

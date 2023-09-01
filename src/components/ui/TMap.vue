@@ -46,7 +46,7 @@ export default {
         {
           lat: -16.373289,
           lng: -48.982065,
-          name: 'Code Tower'
+          name: siteName
         }
       ],
       pins: {

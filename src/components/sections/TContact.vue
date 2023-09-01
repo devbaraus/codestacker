@@ -3,20 +3,43 @@
     <p class="mb-2 text-center text-sm font-semibold text-primary">Contato</p>
     <h3 class="mb-8 text-center text-2xl">Entre em contato conosco</h3>
 
-    <div class="lg:flex-no-wrap flex w-full flex-row flex-wrap">
+    <div class="grid lg:grid-cols-2">
+      <!--      <div-->
+      <!--        data-aos="fade-left"-->
+      <!--        class="mb-6 w-full lg:mb-0"-->
+      <!--      >-->
+      <!--        <TMap class="lg:pr-3" />-->
+      <!--      </div>-->
       <div
-        class="wow animate__animated animate__fadeInLeft mb-6 w-full lg:mb-0"
-        data-wow-duration="2s"
-        data-wow-offset="10"
+        class="w-full"
+        data-aos="fade-left"
       >
-        <!--        <TMap class="lg:pr-3" />-->
+        <div class="space-y-4">
+          <div class="space-y-2">
+            <p class="font-semibold tracking-wide text-primary">Endereço</p>
+            <p class="font-light">Rua 75, nº 46, Setor Central, Goiânia - GO, 74055-110</p>
+          </div>
+          <div class="space-y-2">
+            <p class="font-semibold tracking-wide text-primary">Telefone</p>
+            <p class="font-light">(62) 3227-2730</p>
+          </div>
+          <div class="space-y-2">
+            <p class="font-semibold tracking-wide text-primary">Email</p>
+            <p class="font-light">
+              <a
+                href="mailto:"
+                class="hover:underline"
+              >
+                contato@codestacker.com
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
-
       <form
         @submit.prevent="submitForm"
-        class="wow animate__animated animate__fadeInRight w-full space-y-6 lg:pl-3"
-        data-wow-duration="2s"
-        data-wow-offset="10"
+        data-aos="fade-right"
+        class="space-y-4"
       >
         <div class="flex w-full flex-row flex-wrap gap-6 lg:flex-nowrap">
           <TField

@@ -1,4 +1,4 @@
-import type { Project } from '@/types'
+import type { Member, Project, Social } from '@/types'
 
 export const siteName = 'Code Stacker'
 export const siteTitle = `${siteName} - Empresa Júnior do IFG Câmpus Anápolis`
@@ -26,10 +26,10 @@ export const siteKeywords = [
 ]
 
 export const siteContatos = [
-  { url: 'https://www.facebook.com/codetower.ej', text: '@codestacker.ej', icon: 'facebook' },
-  { url: 'https://www.instagram.com/codetower.ej', text: '@codestacker.ej', icon: 'instagram' },
+  { url: '/#', text: '@codestacker.ej', icon: 'facebook' },
+  { url: '/#', text: '@codestacker.ej', icon: 'instagram' },
   // { url: '/', text: 'codetower', icon: 'youtube' },
-  { url: 'mailto:codetower.ej@gmail.com', text: 'codestacker.ej@gmail.com', icon: 'mail' }
+  { url: '/#', text: 'codestacker.ej@gmail.com', icon: 'mail' }
 ]
 
 export const siteLinksUteis = [
@@ -88,5 +88,81 @@ export const siteProjects: Project[] = [
     title: 'Projeto 4',
     tag: 'aplicativos',
     releasedAt: '2021-01-01'
+  }
+]
+
+// Create a function to generate custom social media data
+function generateSocials(memberName: string): Social[] {
+  return [
+    {
+      label: `Twitter`,
+      href: `https://twitter.com/${memberName.toLowerCase()}`,
+      type: 'twitter'
+    },
+    {
+      label: `LinkedIn`,
+      href: `https://linkedin.com/in/${memberName.toLowerCase()}`,
+      type: 'linkedin'
+    }
+    // Add more social media profiles as needed
+  ]
+}
+
+// Create 5 mock members with custom social media data
+export const siteMembers: Member[] = [
+  {
+    id: 1,
+    name: 'Member 1',
+    cover: {
+      href: 'https://unsplash.com/photos/5aGUyCW_PJw/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkzNTY1Nzg3fA&force=true&w=640',
+      alternative: '',
+      caption: ''
+    },
+    role: 'presidente',
+    socials: generateSocials('Member1')
+  },
+  {
+    id: 2,
+    name: 'Member 2',
+    cover: {
+      href: 'https://unsplash.com/photos/IF9TK5Uy-KI/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkzNTY0MDQ3fA&force=true&w=640',
+      alternative: '',
+      caption: ''
+    },
+    role: 'projetos',
+    socials: generateSocials('Member2')
+  },
+  {
+    id: 3,
+    name: 'Member 3',
+    cover: {
+      href: 'https://unsplash.com/photos/mEZ3PoFGs_k/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkzNTY3NDUwfA&force=true&w=640',
+      alternative: '',
+      caption: ''
+    },
+    role: 'marketing',
+    socials: generateSocials('Member3')
+  },
+  {
+    id: 4,
+    name: 'Member 4',
+    cover: {
+      href: 'https://unsplash.com/photos/7YVZYZeITc8/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkzNTY5OTgzfA&force=true&w=640',
+      alternative: '',
+      caption: ''
+    },
+    role: 'financeiro',
+    socials: generateSocials('Member4')
+  },
+  {
+    id: 5,
+    name: 'Member 5',
+    cover: {
+      href: 'https://unsplash.com/photos/D6t70k8F28w/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkzNTY5MjEyfA&force=true&w=640',
+      alternative: '',
+      caption: ''
+    },
+    role: 'secretário',
+    socials: generateSocials('Member5')
   }
 ]
