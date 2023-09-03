@@ -1,8 +1,8 @@
 <template>
   <!-- :cluster="{ options: { styles: clusterStyle } }" -->
   <GMap
-    ref="gMap"
     class="h-full"
+    ref="gMap"
     :center="{ lat: locations[0].lat, lng: locations[0].lng }"
     :options="{
       fullscreenControl: false,

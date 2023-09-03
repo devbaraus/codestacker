@@ -1,116 +1,74 @@
 <template>
   <div
-    :class="`flex  ${
-      ['checkbox', 'radio'].includes(type)
-        ? 'flex-row-reverse items-center justify-end'
-        : 'flex-col'
-    }`"
+    :class="
+      cn(
+        'flex',
+        ['checkbox', 'radio'].includes(type)
+          ? 'flex-row-reverse items-center justify-end'
+          : 'flex-col'
+      )
+    "
   >
     <label
-      :class="`text-${textColor}  ${
-        ['checkbox', 'radio'].includes(type) ? 'ml-2' : 'mb-3'
-      } font-bold tracking-wide`"
+      :class="
+        cn(
+          'text-primary font-bold tracking-wide',
+          ['checkbox', 'radio'].includes(type) ? 'ml-2' : 'mb-3'
+        )
+      "
     >
       {{ text }}
     </label>
     <input
       v-if="type != 'textarea'"
-      :placeholder="placeholder"
       ref="input"
-      @input="chooseMask"
-      @change="callValidation"
+      @input="inputValue"
       :type="type"
       v-bind="$attrs"
       :class="
         cn(
           ' border-1 border px-2 py-3',
           ['checkbox', 'radio'].includes(type) ? 'h-4 w-4' : 'shadow',
-          !wasValidated ? 'border-white' : !!isValid ? 'border-tertiary' : 'border-secondary'
+          valid === null ? 'border-white' : valid ? 'border-tertiary' : 'border-secondary'
         )
       "
-      v-on="getListeners"
     />
     <textarea
       v-else
-      :placeholder="placeholder"
-      :type="type"
       ref="field"
+      @input="inputValue"
       v-bind="$attrs"
-      @input="chooseMask"
-      @change="callValidation"
-      :class="`h-${height} border-1 resize-none border px-2 py-3 shadow ${
-        !wasValidated ? 'border-white' : !!isValid ? 'border-tertiary' : 'border-secondary'
-      }`"
-      v-on="getListeners"
-    ></textarea>
+      :class="
+        cn(
+          'h-32 border-1 resize-none border px-2 py-3 shadow',
+          valid === null ? 'border-white' : valid ? 'border-tertiary' : 'border-secondary'
+        )
+      "
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { cn } from '@/utils'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 
 const emit = defineEmits(['input'])
 
-const wasValidated = ref(false)
-const isValid = ref(false)
-const field = ref(null)
-const input = ref(null)
+const field = ref<HTMLTextAreaElement>()
+const input = ref<HTMLInputElement>()
 
-const props = defineProps({
-  textColor: {
-    type: String,
-    default: 'primary'
-  },
-  validate: {
-    type: Function,
-    default: () => {
-      return true
-    }
-  },
-  text: {
-    type: String,
-    default: 'campo'
-  },
-  type: {
-    type: String,
-    default: 'text'
-  },
-  placeholder: {
-    type: String,
-    default: 'exemplo'
-  },
-  height: {
-    type: String,
-    default: '32'
-  }
-})
+const props = defineProps<{
+  mask?: Function
+  valid?: boolean | null
+  text: string
+  type: string
+}>()
 
-function callValidation() {
-  wasValidated.value = true
-  isValid.value = props.validate()
-}
-function chooseMask() {
-  if (props.type === 'tel') {
-    maskTel()
-  }
-  if (props.type === 'textarea') {
-    emit('input', field.value)
-  } else {
-    emit('input', input.value)
-  }
-}
-function maskTel() {
-  // let v = input.value
-  // v = v.replace(/\D/g, '') //Remove tudo o que não é dígito
-  // v = v.replace(/^(\d\d)(\d)/g, '($1) $2') //Coloca parênteses em volta dos dois primeiros dígitos
-  // v = v.replace(/(\d{5})(\d)/, '$1-$2') //Coloca hífen entre o quarto e o quinto dígitos
-  // input.value = v
-}
+function inputValue(e: Event) {
+  let value = (e.target as HTMLInputElement | HTMLTextAreaElement).value
+  value = props.mask ? props.mask(value) : value
 
-const getListeners = computed(() => {
-  // const { input, ...others } = $attrs
-  // return { ...others }
-  return {}
-})
+  emit('input', value)
+  input.value!.value = value
+}
 </script>

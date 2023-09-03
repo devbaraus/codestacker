@@ -25,22 +25,22 @@ onMounted(() => {
   <main class="container mt-20">
     <THeaderHero id="home" />
     <TServices
-      id="servicos"
       class="pt-16"
+      id="servicos"
     />
     <!--      <TBlog id="blog" class="my-32" :articles="articles" />-->
     <TPortfolio
-      id="portfolio"
       class="-my-4 py-20"
+      id="portfolio"
     />
     <TAbout
-      id="sobre"
       class="-my-4 py-20"
+      id="sobre"
     />
     <TMembers class="-my-4 py-20" />
     <TContact
-      id="contato"
       class="-my-4 py-20"
+      id="contato"
     />
   </main>
   <TFooter />

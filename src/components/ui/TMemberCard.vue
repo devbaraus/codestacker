@@ -1,10 +1,10 @@
 <template>
   <div class="flex h-full flex-1 flex-col">
     <img
+      class="mb-4 h-64 w-full rounded-lg object-cover lg:h-48"
       :src="member.cover.href"
       :title="member.cover.caption"
       :alt="member.cover.alternative"
-      class="mb-4 h-64 w-full rounded-lg object-cover lg:h-48"
     />
 
     <div class="flex flex-1 flex-col">
@@ -30,7 +30,7 @@
         :href="social.href"
         :class="
           cn(
-            `ease-in-300 text-lg`,
+            ` text-lg`,
             member.role === 'presidente' && 'hover:text-secondary',
             member.role === 'projetos' && 'hover:text-primary',
             member.role === 'financeiro' && 'hover:text-tertiary',

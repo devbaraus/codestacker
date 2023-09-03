@@ -2,14 +2,14 @@
   <div
     :class="`${
       show ? '' : 'invisible'
-    } ease-in-300 bg-dark-40  fixed z-50 flex h-full w-full items-center justify-center`"
+    }  bg-dark-40  fixed z-50 flex h-full w-full items-center justify-center`"
     @click="handleClose"
   >
     <div
       id="flash-message"
       :class="`${
         show ? 'flash-active' : ''
-      } ease-in-300  fixed flex h-80 w-64 flex-col items-center justify-center rounded-lg bg-white px-4 py-8 text-dark`"
+      }   fixed flex h-80 w-64 flex-col items-center justify-center rounded-lg bg-white px-4 py-8 text-dark`"
     >
       <i
         :class="`${

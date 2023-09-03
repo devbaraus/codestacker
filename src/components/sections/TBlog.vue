@@ -5,6 +5,7 @@
     <div class="grid grid-cols-1 justify-center gap-8 lg:grid-cols-3">
       <TBlogCard
         class=""
+        class="wow animate__animated animate__fadeInUp"
         v-for="(article, index) in articles"
         :key="article.title"
         :title="article.title"
@@ -12,7 +13,6 @@
         :date="article.created_at"
         :cover="article.cover"
         :data-wow-duration="`${(3 - index) * 0.3 + 1}s`"
-        class="wow animate__animated animate__fadeInUp"
         data-wow-offset="0"
       />
     </div>

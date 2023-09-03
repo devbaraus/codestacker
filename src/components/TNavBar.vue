@@ -59,6 +59,7 @@ const links = [
         @click="toggleNav"
       >
         <PhX class="text-xl" />
+        <span class="sr-only">Toggle Mobile Navigation</span>
       </button>
       <ul class="flex flex-col items-end gap-4">
         <li
@@ -67,7 +68,7 @@ const links = [
           @click="toggleNav"
         >
           <t-button
-            class="ease-in-300 hover:bg-primary"
+            class="hover:bg-primary"
             v-if="link.special"
             type="link"
             :url="link.url"
@@ -75,7 +76,7 @@ const links = [
             {{ link.text }}
           </t-button>
           <a
-            class="ease-in-300 hover:text-primary"
+            class="hover:text-primary"
             v-else
             :href="link.url"
             >{{ link.text }}</a
@@ -91,18 +92,17 @@ const links = [
     <nav class="container z-20 flex items-center justify-between py-4 text-dark">
       <a href="/">
         <img
-          src="@/assets/logo.svg"
           class="inline h-10 align-middle"
-          :alt="siteName"
-          :title="siteName"
+          src="@/assets/logo.svg"
+          :alt="`Logo ${siteName}`"
         />
         <p class="ml-2 inline align-middle text-2xl font-extrabold uppercase">
           {{ siteName }}
         </p>
       </a>
       <button
-        @click="toggleNav"
         class="lg:hidden"
+        @click="toggleNav"
       >
         <PhList class="text-xl" />
       </button>
@@ -120,7 +120,7 @@ const links = [
             {{ link.text }}
           </t-button>
           <a
-            class="ease-in-300 hover:text-primary"
+            class="hover:text-primary"
             v-else
             :href="link.url"
             >{{ link.text }}</a

@@ -1,13 +1,16 @@
 <template>
   <div class="group relative flex h-full flex-1 flex-col overflow-hidden rounded-lg">
     <img
-      class="ease-in-300 h-72 object-cover transition-all group-hover:scale-105"
+      class="h-72 w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
       :src="project.cover.href"
       :alt="project.cover.alternative"
       :title="project.cover.caption"
+      width="640"
+      height="427"
+      loading="lazy"
     />
     <div
-      class="absolute -bottom-full left-0 w-full bg-white/60 px-8 py-4 transition-all group-hover:bottom-0"
+      class="absolute -bottom-full left-0 w-full bg-white/60 px-8 py-4 transition-all duration-300 ease-in-out group-hover:bottom-0"
     >
       <span
         :class="

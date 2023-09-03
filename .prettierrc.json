@@ -8,6 +8,8 @@
   "trailingComma": "none",
   "plugins": [
     "prettier-plugin-tailwindcss",
-    "@ianvs/prettier-plugin-sort-imports"
-  ]
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-organize-attributes"
+  ],
+  "attributeGroups": ["^class$", "^(id|name)$", "$DEFAULT", "^aria-"]
 }

@@ -8,11 +8,13 @@
       </p>
     </div>
     <img
-      src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+      class="hidden h-72 w-full rounded-lg object-cover lg:flex"
+      src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80&fm=webp"
       :alt="`Imagem de capa do site ${siteName}`"
       data-aos="fade-up"
-      class="hidden h-full w-full rounded-lg object-cover lg:flex"
       :title="`Grupo ${siteName}`"
+      width="750"
+      height="500"
     />
   </section>
 </template>

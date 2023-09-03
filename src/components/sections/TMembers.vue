@@ -5,7 +5,7 @@
       class="services-grid grid grid-cols-1 gap-12 rounded-lg py-8 md:grid-cols-2 lg:grid-cols-5"
     >
       <TMemberCard
-        v-for="(member, index) in siteMembers"
+        v-for="member in siteMembers"
         :key="member.id"
         :member="member"
         data-aos="fade-up"

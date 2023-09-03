@@ -1,8 +1,8 @@
 <template>
   <div
+    class="flex h-screen w-full flex-1 flex-col items-center justify-center lg:h-full lg:py-64"
     data-aos="fade-in"
     data-aos-duration="1000"
-    class="flex h-screen w-full flex-1 flex-col items-center justify-center lg:h-full lg:py-64"
   >
     <p class="text-center font-semibold uppercase text-primary">Bem vindos à {{ siteName }}</p>
     <h1 class="my-4 text-center text-4xl font-extrabold text-dark lg:text-6xl">

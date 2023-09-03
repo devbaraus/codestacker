@@ -5,12 +5,12 @@
     >
       <div class="w-full">
         <a
-          href="/"
           class="h-full w-full"
+          href="/"
         >
           <img
-            src="@/assets/logo.svg"
             class="inline h-16 align-middle"
+            src="@/assets/logo.svg"
             :alt="`Logo ${siteName}`"
             :title="siteName"
           />
@@ -29,16 +29,16 @@
             :key="link.url"
           >
             <a
+              class="font-light hover:text-primary"
               v-if="link.url.includes('http')"
-              class="ease-in-300 font-light hover:text-primary"
               target="_blank"
               :href="link.url"
               rel="noreferrer"
               >{{ link.text }}</a
             >
             <a
+              class="font-light hover:text-primary"
               v-else
-              class="ease-in-300 font-light hover:text-primary"
               :href="link.url"
               rel="noreferrer"
             >
@@ -51,15 +51,32 @@
         <p class="mb-4 text-center text-xl">Contato</p>
         <ul class="flex flex-col gap-y-2">
           <li
-            v-for="contato in siteContatos"
-            :key="contato.url"
+            v-for="contato in siteContact.socials"
+            :key="contato.href"
           >
             <a
-              :href="contato.url"
-              class="ease-in-300 inline-flex items-center font-light hover:text-primary"
+              class="inline-flex items-center font-light hover:text-primary"
+              :href="contato.href"
               target="_blank"
             >
-              <i :class="`fi-${contato.icon} mr-2`"></i>{{ contato.text }}
+              <PhLinkedinLogo
+                class="mr-2"
+                v-if="contato.type === 'linkedin'"
+              />
+              <PhFacebookLogo
+                class="mr-2"
+                v-if="contato.type === 'facebook'"
+              />
+              <PhInstagramLogo
+                class="mr-2"
+                v-if="contato.type === 'instagram'"
+              />
+              <PhTwitterLogo
+                class="mr-2"
+                v-if="contato.type === 'twitter'"
+              />
+
+              {{ contato.label }}
             </a>
           </li>
         </ul>
@@ -72,5 +89,6 @@
 </template>
 
 <script setup lang="ts">
-import { siteCNPJ, siteContatos, siteDescription, siteLinksUteis, siteName } from '@/site.config'
+import { siteCNPJ, siteContact, siteDescription, siteLinksUteis, siteName } from '@/site.config'
+import { PhFacebookLogo, PhInstagramLogo, PhLinkedinLogo, PhTwitterLogo } from '@phosphor-icons/vue'
 </script>

@@ -2,17 +2,17 @@
   <article class="flex h-full flex-1 flex-col">
     <nuxt-link :to="url">
       <TImage
+        class="h-48 w-full rounded-lg object-cover"
         :src="cover.url"
         :alt="cover.alternative"
         :title="cover.caption"
-        class="h-48 w-full rounded-lg object-cover"
       />
     </nuxt-link>
     <div class="mt-4 flex flex-1 flex-col justify-start">
       <span :class="`font-medium text-${typeColor} text-xs uppercase`">{{ type }}</span>
       <nuxt-link
-        :to="url"
         class="my-1 text-base font-medium"
+        :to="url"
         >{{ title }}</nuxt-link
       >
     </div>
