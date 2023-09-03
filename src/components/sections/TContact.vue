@@ -38,6 +38,7 @@
       </div>
       <form
         class="space-y-4"
+        @submit.prevent="submitForm"
         @change="validateFormField"
         data-aos="fade-in"
       >
@@ -47,10 +48,8 @@
             name="name"
             text="Nome"
             placeholder="Fulano Benedito"
-            pattern="(\w.+\s).+"
             type="text"
             required
-            :valid="formValidation.name"
           />
           <TField
             class="w-full"
@@ -109,14 +108,14 @@ import TField from '@/components/ui/TField.vue'
 import IMask from 'imask'
 import { ref } from 'vue'
 import { z } from 'zod'
-import { siteContact } from '../../site.config'
+import { siteContact } from '@/site.config'
 
 const formValidation = ref({
-  name: null,
-  email: null,
-  phone: null,
-  subject: null,
-  message: null
+  name: true,
+  email: true,
+  phone: true,
+  subject: true,
+  message: true
 })
 
 const formMask = {
@@ -133,7 +132,7 @@ const formMask = {
 const formSchema = z.object({
   name: z.string().min(3).max(50),
   email: z.string().email(),
-  phone: z.string().min(10).max(15).transform(formMask.phone.unmask),
+  phone: z.string().min(14).max(15).transform(formMask.phone.unmask),
   subject: z.string().min(3).max(50),
   message: z.string().min(3).max(500)
 })
@@ -148,6 +147,20 @@ function validateFormField(e: Event) {
   formValidation.value = {
     ...formValidation.value,
     [name]: isValid
+  }
+}
+
+function submitForm(e: Event) {
+  const form = e.target as HTMLFormElement
+
+  const formData = new FormData(form)
+
+  const data = Object.fromEntries(formData.entries())
+
+  const isValid = formSchema.safeParse(data).success
+
+  if (isValid) {
+    console.log(data)
   }
 }
 </script>

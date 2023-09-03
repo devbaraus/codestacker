@@ -3,7 +3,7 @@
     :class="
       cn(
         'flex',
-        ['checkbox', 'radio'].includes(type)
+        ['checkbox', 'radio'].includes(type!)
           ? 'flex-row-reverse items-center justify-end'
           : 'flex-col'
       )
@@ -13,7 +13,7 @@
       :class="
         cn(
           'text-primary font-bold tracking-wide',
-          ['checkbox', 'radio'].includes(type) ? 'ml-2' : 'mb-3'
+          ['checkbox', 'radio'].includes(type!) ? 'ml-2' : 'mb-3'
         )
       "
     >
@@ -28,8 +28,8 @@
       :class="
         cn(
           ' border-1 border px-2 py-3',
-          ['checkbox', 'radio'].includes(type) ? 'h-4 w-4' : 'shadow',
-          valid === null ? 'border-white' : valid ? 'border-tertiary' : 'border-secondary'
+          ['checkbox', 'radio'].includes(type!) ? 'h-4 w-4' : 'shadow',
+          valid ? 'border-white' : 'border-secondary'
         )
       "
     />
@@ -41,7 +41,7 @@
       :class="
         cn(
           'h-32 border-1 resize-none border px-2 py-3 shadow',
-          valid === null ? 'border-white' : valid ? 'border-tertiary' : 'border-secondary'
+          valid ? 'border-white' : 'border-secondary'
         )
       "
     />
@@ -57,18 +57,22 @@ const emit = defineEmits(['input'])
 const field = ref<HTMLTextAreaElement>()
 const input = ref<HTMLInputElement>()
 
-const props = defineProps<{
-  mask?: Function
-  valid?: boolean | null
-  text: string
-  type: string
-}>()
+const props = defineProps({
+  mask: Function,
+  valid: {
+    type: Boolean,
+    default: true
+  },
+  text: String,
+  type: String
+})
 
 function inputValue(e: Event) {
+  const fieldRef = input.value || field.value
   let value = (e.target as HTMLInputElement | HTMLTextAreaElement).value
   value = props.mask ? props.mask(value) : value
 
   emit('input', value)
-  input.value!.value = value
+  fieldRef!.value = value
 }
 </script>
